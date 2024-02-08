@@ -1,7 +1,0 @@
-uses: jotahe/issue-action@v1
-with:
-  token: ${{ secrets.GITHUB_TOKEN }}
-  title: Some Issue Title
-  body: Some Issue Body
-  assignees: |
-    lynndaidai
