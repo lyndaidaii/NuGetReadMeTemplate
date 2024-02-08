@@ -19,26 +19,19 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             try {
-              const { Octokit } = require("@octokit/rest");
-
-              const octokit = new Octokit({
-                auth: process.env.GITHUB_TOKEN,
-              });
-              
               const repos = ['NuGet/NuGetGallery', 'NuGet/NuGet.Jobs', 'lyndaidaii/TestWithSVG']; // List of repositories
               const title = 'New Issue Title';
               const body = 'Description of the issue...';
 
               async function createIssue(repo) {
                 const [owner, repoName] = repo.split('/');
-                const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
-                const issue = await octokit.issues.create({
+                const response = await github.request('POST /repos/{owner}/{repo}/issues', {
                   owner: owner,
                   repo: repoName,
                   title: title,
                   body: body
                 });
-                console.log(`Issue created in ${repo}:`, issue.data.html_url);
+                console.log(`Issue created in ${repo}:`, response.data.html_url);
               }
 
               for (const repo of repos) {
