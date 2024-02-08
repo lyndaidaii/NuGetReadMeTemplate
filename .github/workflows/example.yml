@@ -1,2 +1,0 @@
-- name: PR Label Checker            
-  uses: TARAAI/PR-Label-Checker@1.0.3
