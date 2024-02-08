@@ -18,6 +18,8 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const github = require('@actions/github');
+            const core = require('@actions/core');
             try {
               const repos = ['NuGet/NuGetGallery', 'NuGet/NuGet.Jobs', 'lyndaidaii/TestWithSVG']; // List of repositories
               const title = 'Package is missing NuGet package README file';
@@ -25,6 +27,7 @@ jobs:
 
               async function createIssue(repo) {
                 const [owner, repoName] = repo.split('/');
+                const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
                 const issue = await github.issues.create({
                   owner: owner,
                   repo: repoName,
