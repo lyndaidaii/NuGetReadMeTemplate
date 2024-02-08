@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Create Issues
         uses: actions/github-script@v5
@@ -25,7 +25,8 @@ jobs:
 
               async function createIssue(repo) {
                 const [owner, repoName] = repo.split('/');
-                const issue = await github.issues.create({
+                const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
+                const issue = await octokit.rest.issues.create({
                   owner: owner,
                   repo: repoName,
                   title: title,
