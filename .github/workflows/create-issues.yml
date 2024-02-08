@@ -18,7 +18,6 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const core = require('@actions/core');
             try {
               const repos = ['NuGet/NuGetGallery', 'NuGet/NuGet.Jobs', 'lyndaidaii/TestWithSVG']; // List of repositories
               const title = 'Package is missing NuGet package README file';
@@ -41,5 +40,5 @@ jobs:
               }
             } catch (error) {
               console.error('Error:', error.message);
-              core.setFailed(error.message);
+              setFailed(error.message);
             }
