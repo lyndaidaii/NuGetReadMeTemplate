@@ -1,18 +1,1 @@
-name: Your Workflow Name
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  your_job_name:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: lionelrrivas/github-issue-creator@v1.0.1
-        with:
-          # Optionally, provide inputs for the action if required
-
-      - name: Github issue creator action
-        # Add your subsequent steps here
+ - uses: lionelrrivas/github-issue-creator@v1.0
