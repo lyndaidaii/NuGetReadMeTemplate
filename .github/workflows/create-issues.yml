@@ -25,14 +25,31 @@ jobs:
               };
 
               const body = `We've noticed that your package on NuGet.org is missing a README file.\n A README is essential for users to understand your package's purpose and functionality quickly. It's the first thing users see on NuGet.org and helps them decide if your package meets their needs.\nWe've created [a blog post]([check out our blog post](https://devblogs.microsoft.com/nuget/write-a-high-quality-readme-for-nuget-packages/) for some README best practices and a template file.) with README best practices and a template file to help you get started. Adding a README will improve your package's visibility and usability.\n If you're new to NuGet READMEs, we've provided guidance on [how to add one to your package](https://devblogs.microsoft.com/nuget/add-a-readme-to-your-nuget-package/).\n We value your feedback. If you encounter any issues or have suggestions, please reply to this issue.\n Thank you for your contribution to the NuGet community.`;
+              const markdownContent = `
+              # Welcome to My GitHub Repository
 
+              ## Description
+              This repository contains code for my awesome project.
+
+              ## Installation
+              To install the project dependencies, run:
+              \`\`\`
+              npm install
+              \`\`\`
+
+              ## Usage
+              To use the project, follow these steps:
+              1. Clone the repository.
+              2. Navigate to the project directory.
+              3. Run the project with \`node app.js\`.
+              `;
               async function createIssue(repo, packageName) {
                 const [owner, repoName] = repo.split('/');
                 const response = await github.rest.issues.create({
                   owner: owner,
                   repo: repoName,
                   title: `${packageName} is missing NuGet package README file`,
-                  body: body
+                  body: markdownContent
                 });
                 console.log(`Issue created in ${repo}: for package ${packageName} `, response.data.html_url);
               }
