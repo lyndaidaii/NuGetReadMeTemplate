@@ -18,6 +18,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const { context, github } = require('@actions/github');
             try {
               const repos = ['NuGet/NuGetGallery', 'NuGet/NuGet.Jobs', 'lyndaidaii/TestWithSVG']; // List of repositories
               const title = 'New Issue Title';
@@ -25,7 +26,7 @@ jobs:
 
               async function createIssue(repo) {
                 const [owner, repoName] = repo.split('/');
-                const response = await github.request('POST /repos/{owner}/{repo}/issues', {
+                const response = await github.rest.issues.create({
                   owner: owner,
                   repo: repoName,
                   title: title,
