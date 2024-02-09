@@ -24,7 +24,7 @@ jobs:
               const body = 'Description of the issue...';
               const token = process.env.PAT; // Replace with your PAT
                 // Authenticate using the token
-              github.authenticate({
+              github.createTokenAuth({
                 type: 'token',
                 token: token
               });
