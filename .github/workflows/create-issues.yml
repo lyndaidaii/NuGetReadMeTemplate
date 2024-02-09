@@ -19,13 +19,15 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             try {
-              const repos = ['lyndaidaii/NuGetReadMeTemplate']; // List of repositories
+              const repos = ['lyndaidaii/NuGetReadMeTemplate', 'lyndaidaii/TestWithSVG']; // List of repositories
               const title = 'New Issue Title';
               const body = 'Description of the issue...';
+              const token = process.env.PAT; // Replace with your PAT
+              const octokit = new github.getOctokit(token);
 
               async function createIssue(repo) {
                 const [owner, repoName] = repo.split('/');
-                const response = await github.rest.issues.create({
+                const response = await octokit.rest.issues.create({
                   owner: owner,
                   repo: repoName,
                   title: title,
