@@ -23,11 +23,15 @@ jobs:
               const title = 'New Issue Title';
               const body = 'Description of the issue...';
               const token = process.env.PAT; // Replace with your PAT
-              const octokit = new github.getOctokit(token);
+                // Authenticate using the token
+              github.authenticate({
+                type: 'token',
+                token: token
+              });
 
               async function createIssue(repo) {
                 const [owner, repoName] = repo.split('/');
-                const response = await octokit.rest.issues.create({
+                const response = await github.rest.issues.create({
                   owner: owner,
                   repo: repoName,
                   title: title,
