@@ -19,7 +19,7 @@ jobs:
           github-token: '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'
           script: |
             try {
-              const repos = ['lyndaidaii/NuGetReadMeTemplate', 'lyndaidaii/TestWithSVG']; // List of repositories
+              const repos = [ 'NuGet/NuGetGallery', 'NuGet/NuGet.Jobs','lyndaidaii/NuGetReadMeTemplate', 'lyndaidaii/TestWithSVG']; // List of repositories
               const title = 'New Issue Title';
               const body = 'Description of the issue...';
 
