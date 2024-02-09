@@ -1,9 +1,7 @@
 name: Create Issues on Multiple Repositories
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:  # Manually triggered workflow
 
 jobs:
   create_issues:
@@ -21,26 +19,6 @@ jobs:
             try {
               //const repos = [ 'NuGet/NuGetGallery', 'NuGet/NuGet.Jobs','lyndaidaii/NuGetReadMeTemplate', 'lyndaidaii/TestWithSVG']; // List of repositories
               const packages = {
-              'materialdesignthemes': 'MaterialDesignInXAML/MaterialDesignInXamlToolkit',
-              'opencvsharp4': 'shimat/opencvsharp',
-              'cefsharp.winforms': 'cefsharp/cefsharp',
-              'ssh.net': 'sshnet/SSH.NET/',
-              'google.protobuf': 'protocolbuffers/protobuf',
-              'awssdk.s3': 'aws/aws-sdk-net/',
-              'naudio': 'naudio/NAudio',
-              'sixlabors.imagesharp': 'SixLabors/ImageSharp',
-              'zxing.net': 'micjahn/ZXing.Net/',
-              'opencvsharp4.runtime.win': 'shimat/opencvsharp',
-              'sqlsugarcore': 'sunkaixuan/SqlSugar',
-              'mqttnet': 'dotnet/MQTTnet',
-              'coverlet.collector': 'coverlet-coverage/coverlet',
-              'opentk': 'opentk/opentk',
-              'telegram.bot': 'TelegramBots/telegram.bot',
-              'sqlsugar': 'sunkaixuan/SqlSugar',
-              'opencvsharp4.extensions': 'shimat/opencvsharp',
-              'awssdk.core': 'aws/aws-sdk-net/',
-              'confluent.kafka': 'confluentinc/confluent-kafka-dotnet/',
-              'blazored.localstorage': 'Blazored/LocalStorage',
               'stylecop.analyzers': 'DotNetAnalyzers/StyleCopAnalyzers',
               'bogus': 'bchavez/Bogus',
               'opencvsharp4.windows': 'shimat/opencvsharp',
@@ -150,6 +128,7 @@ jobs:
                 if (Object.hasOwnProperty.call(packages, packageName)) {
                   const repo = packages[packageName];
                   try {
+                    await new Promise(resolve => setTimeout(resolve, 60000));
                     await createIssue(repo, packageName);
                   } catch (error) {
                     console.error(`Error occurred while processing package ${packageName}: ${error.message}`);
