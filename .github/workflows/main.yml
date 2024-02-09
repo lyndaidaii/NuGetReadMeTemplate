@@ -8,14 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Cache
-        uses: actions/cache@v4.0.0
-        # Define your actions or commands here
-
+      - uses: actions/checkout@v3
       - name: Create Github Issue
         uses: dacbd/create-issue-action@v1.2.1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ github.token }}
           title: Simple test issue
           body: my new issue
             
