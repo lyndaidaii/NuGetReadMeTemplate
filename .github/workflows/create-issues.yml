@@ -36,15 +36,19 @@ jobs:
                 });
                 console.log(`Issue created in ${repo}:`, response.data.html_url);
               }
-
-              for package in "${packages[@]}"; do{
-                try {
-                  packageName="${package%%=*}"
-                  repo="${package#*=}"
-                  echo "Package: $packageName, Project URL: $projectUrl"
-                  await createIssue(repo, packageName)
-                } catch (error) {
-                  echo "Error occurred while processing package $packageName: $error"
-                  exit 1
+              
+              for (const packageName in packages) {
+                if (Object.hasOwnProperty.call(packages, packageName)) {
+                  const repo = packages[packageName];
+                  try {
+                    await createIssue(repo, packageName);
+                  } catch (error) {
+                    console.error(`Error occurred while processing package ${packageName}: ${error.message}`);
+                    core.setFailed(error.message);
+                  }
                 }
-              done
+              }
+            } catch (error) {
+              console.error('Error:', error.message);
+              core.setFailed(error.message);
+            }
