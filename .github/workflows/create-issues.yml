@@ -19,7 +19,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             try {
-              const repos = ['NuGet/NuGetGallery', 'NuGet/NuGet.Jobs', 'lyndaidaii/TestWithSVG']; // List of repositories
+              const repos = ['lyndaidaii/TestWithSVG']; // List of repositories
               const title = 'New Issue Title';
               const body = 'Description of the issue...';
 
