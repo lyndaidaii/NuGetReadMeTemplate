@@ -31,10 +31,10 @@ jobs:
                 const response = await github.rest.issues.create({
                   owner: owner,
                   repo: repoName,
-                  title: '${packageName} is missing NuGet package README file',
+                  title: `${packageName} is missing NuGet package README file`,
                   body: body
                 });
-                console.log(`Issue created in ${repo}:`, response.data.html_url);
+                console.log(`Issue created in ${repo}: for package ${packageName} `, response.data.html_url);
               }
               
               for (const packageName in packages) {
