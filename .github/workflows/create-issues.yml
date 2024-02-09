@@ -21,7 +21,10 @@ jobs:
             try {
               //const repos = [ 'NuGet/NuGetGallery', 'NuGet/NuGet.Jobs','lyndaidaii/NuGetReadMeTemplate', 'lyndaidaii/TestWithSVG']; // List of repositories
               const packages = {
-                'test packages': 'lyndaidaii/TestWithSVG'
+                'test packages': 'lyndaidaii/TestWithSVG'.
+                'serilog.sinks.file': 'serilog/serilog-sinks-file',
+                'closedxml': 'ClosedXML/ClosedXML',
+                'documentformat.openxml': 'dotnet/Open-XML-SDK'
               };
               
               const markdownContent = `
