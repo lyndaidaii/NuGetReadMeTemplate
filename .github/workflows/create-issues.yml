@@ -16,7 +16,7 @@ jobs:
       - name: Create Issues
         uses: actions/github-script@v5
         with:
-          github-token: ${{ process.env.PAT}}
+          github-token: ${{ secrets.PAT }}
           script: |
             try {
               const repos = ['lyndaidaii/NuGetReadMeTemplate', 'lyndaidaii/TestWithSVG']; // List of repositories
