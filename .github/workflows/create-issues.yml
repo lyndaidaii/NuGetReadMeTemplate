@@ -16,18 +16,12 @@ jobs:
       - name: Create Issues
         uses: actions/github-script@v5
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ process.env.PAT}}
           script: |
             try {
               const repos = ['lyndaidaii/NuGetReadMeTemplate', 'lyndaidaii/TestWithSVG']; // List of repositories
               const title = 'New Issue Title';
               const body = 'Description of the issue...';
-              const token = process.env.PAT; // Replace with your PAT
-                // Authenticate using the token
-              github.createTokenAuth({
-                type: 'token',
-                token: token
-              });
 
               async function createIssue(repo) {
                 const [owner, repoName] = repo.split('/');
