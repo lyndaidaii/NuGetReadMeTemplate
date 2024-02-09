@@ -15,4 +15,5 @@ jobs:
           token: ${{ github.token }}
           title: Simple test issue
           body: my new issue
-            
+          owner: lyndaidaii
+          repo: NuGetReadMeTemplate
