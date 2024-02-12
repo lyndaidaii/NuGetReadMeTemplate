@@ -19,11 +19,9 @@ jobs:
             try {
               //const repos = [ 'NuGet/NuGetGallery', 'NuGet/NuGet.Jobs','lyndaidaii/NuGetReadMeTemplate', 'lyndaidaii/TestWithSVG']; // List of repositories
               const packages = {
-                'Testpackages': 'NuGet/NuGetGallery', 
-                'Testpackages': 'NuGet/NuGet.Jobs',
-                'Testpackages': 'lyndaidaii/NuGetReadMeTemplate',
-                'TestPackages': 'lyndaidaii/TestWithSVG'
-                'Testpackages': 'NuGet/NuGetGallery'
+                'Testpackages3': 'lyndaidaii/NuGetReadMeTemplate',
+                'TestPackages4': 'lyndaidaii/TestWithSVG'
+                'TestPackages6': 'lyndaidaii/TestWithSVG'
               };
 
               const skipRepos=[
