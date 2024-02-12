@@ -20,7 +20,7 @@ jobs:
               //const repos = [ 'NuGet/NuGetGallery', 'NuGet/NuGet.Jobs','lyndaidaii/NuGetReadMeTemplate', 'lyndaidaii/TestWithSVG']; // List of repositories
               const packages = {
                 'Testpackages3': 'lyndaidaii/NuGetReadMeTemplate',
-                'TestPackages4': 'lyndaidaii/TestWithSVG'
+                'TestPackages4': 'lyndaidaii/TestWithSVG',
                 'TestPackages6': 'lyndaidaii/TestWithSVG'
               };
 
