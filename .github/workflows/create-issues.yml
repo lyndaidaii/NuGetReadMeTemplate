@@ -23,7 +23,7 @@ jobs:
                 'Testpackages': 'NuGet/NuGet.Jobs',
                 'Testpackages': 'lyndaidaii/NuGetReadMeTemplate',
                 'TestPackages': 'lyndaidaii/TestWithSVG'
-                'Testpackages': 'NuGet/NuGetGallery', 
+                'Testpackages': 'NuGet/NuGetGallery'
               };
 
               const skipRepos=[
