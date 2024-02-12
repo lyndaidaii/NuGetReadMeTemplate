@@ -19,85 +19,78 @@ jobs:
             try {
               //const repos = [ 'NuGet/NuGetGallery', 'NuGet/NuGet.Jobs','lyndaidaii/NuGetReadMeTemplate', 'lyndaidaii/TestWithSVG']; // List of repositories
               const packages = {
-              'stylecop.analyzers': 'DotNetAnalyzers/StyleCopAnalyzers',
-              'bogus': 'bchavez/Bogus',
-              'opencvsharp4.windows': 'shimat/opencvsharp',
-              'mahapps.metro': 'MahApps/MahApps.Metro',
-              'benchmarkdotnet': 'dotnet/BenchmarkDotNet',
-              's7netplus': 'killnine/s7netplus',
-              'identitymodel': 'IdentityModel/IdentityModel',
-              'mapster': 'MapsterMapper/Mapster',
-              'autofixture': 'AutoFixture/AutoFixture',
-              'prism.wpf': 'PrismLibrary/Prism',
-              'microsoft.extensions.logging.log4net.aspnetcore': 'huorswords/Microsoft.Extensions.Logging.Log4Net.AspNetCore',
-              'prism.unity': 'PrismLibrary/Prism',
-              'coverlet.msbuild': 'coverlet-coverage/coverlet',
-              'prism.core': 'PrismLibrary/Prism',
-              'ocelot': 'ThreeMammals/Ocelot',
-              'extended.wpf.toolkit': 'xceedsoftware/wpftoolkit',
-              'prism.dryioc': 'PrismLibrary/Prism',
-              'cefsharp.wpf': 'cefsharp/cefsharp',
-              'nswag.aspnetcore': 'RicoSuter/NSwag',
-              'stripe.net': 'stripe/stripe-dotnet',
-              'puppeteersharp': 'hardkoded/puppeteer-sharp',
-              'twilio': 'twilio/twilio-csharp',
-              'materialdesigncolors': 'MaterialDesignInXAML/MaterialDesign',
-              'plugin.firebase': 'TobiasBuchholz/Plugin.Firebase',
-              'fody': 'Fody/Fody',
-              'cefsharp.common': 'cefsharp/CefSharp+A8A6:E50AA3:E50',
-              'firebaseadmin': 'Firebase/firebase-admin-dotnet',
-              'clickabletransparentoverlay': 'zaafar/ClickableTransparentOverlay',
-              'discord.net': 'discord-net/Discord.Net',
-              'miniexcel': 'mini-software/MiniExcel',
-              'google.apis.auth': 'googleapis/google-api-dotnet-client',
-              'bouncycastle.netcore': 'chrishaly/bc-csharp',
-              'aspnetcore.healthchecks.ui.client': 'Xabaril/AspNetCore.Diagnostics.HealthChecks',
-              'awssdk.extensions.netcore.setup': 'aws/aws-sdk-net/',
-              'sixlabors.imagesharp.drawing': 'SixLabors/ImageSharp.Drawing',
-              'pdfsharpcore': 'ststeiger/PdfSharpCore',
-              'protobuf-net': 'protobuf-net/protobuf-net',
-              'awssdk.dynamodbv2': 'aws/aws-sdk-net/',
-              'yamldotnet': 'aaubry/YamlDotNet/wiki',
-              'awssdk.sqs': 'aws/aws-sdk-net/',
-              'awssdk.secretsmanager': 'aws/aws-sdk-net/',
-              'aspnetcore.healthchecks.ui': 'Xabaril/AspNetCore.Diagnostics.HealthChecks',
-              'jwt': 'jwt-dotnet/jwt',
-              'ffmpeg.autogen': 'Ruslan-B/FFmpeg.AutoGen',
-              'spectre.console': 'spectreconsole/spectre.console',
-              'imgui.net': 'mellinoe/imgui.net',
-              'mqttnet.extensions.managedclient': 'dotnet/MQTTnet',
-              'opencvsharp4.wpfextensions': 'shimat/opencvsharp',
-              'appium.webdriver': 'appium/dotnet-client',
-              'sharpcompress': 'adamhathcock/sharpcompress',
-              'htmlsanitizer': 'mganss/HtmlSanitizer',
-              'aspnetcore.healthchecks.sqlserver': 'Xabaril/AspNetCore.Diagnostics.HealthChecks',
-              'google.apis': 'googleapis/google-api-dotnet-client',
-              'serilog.sinks.applicationinsights': 'serilog-contrib/serilog-sinks-applicationinsights',
-              'google.apis.drive.v3': 'google/google-api-dotnet-client',
-              'messagepack': 'neuecc/MessagePack-CSharp',
-              'exiled': 'Exiled-Team/EXILED',
-              'awssdk.securitytoken': 'aws/aws-sdk-net/',
-              'helixtoolkit.wpf': 'helix-toolkit/helix-toolkit',
-              'scrutor': 'khellang/Scrutor',
-              'boost': 'sergey-shandar/getboost',
-              'nswag.msbuild': 'RicoSuter/NSwag',
-              'blazored.sessionstorage': 'Blazored/SessionStorage',
-              'google.apis.sheets.v4': 'google/google-api-dotnet-client',
-              'serilog.sinks.elasticsearch': 'serilog-contrib/serilog-sinks-elasticsearch',
-              'materialdesignthemes.mahapps': 'MaterialDesignInXAML/MaterialDesign',
-              'zxing.net.maui.controls': 'redth/ZXing.Net.Maui',
-              'autofixture.automoq': 'AutoFixture/AutoFixture',
-              'aspnetcore.healthchecks.ui.inmemory.storage': 'Xabaril/AspNetCore.Diagnostics.HealthChecks',
-              'swashbuckle.aspnetcore.filters': 'mattfrear/Swashbuckle.AspNetCore.Filters',
-              'fluentresults': 'altmann/FluentResults',
-              'firebasedatabase.net': 'step-up-labs/firebase-database-dotnet'
+                'Testpackages': 'NuGet/NuGetGallery', 
+                'Testpackages': 'NuGet/NuGet.Jobs',
+                'Testpackages': 'lyndaidaii/NuGetReadMeTemplate',
+                'TestPackages': 'lyndaidaii/TestWithSVG'
+                'Testpackages': 'NuGet/NuGetGallery', 
               };
+
+              skipRepos=[
+              'DotNetAnalyzers/StyleCopAnalyzers',
+              'bchavez/Bogus',
+              'shimat/opencvsharp',
+              'MahApps/MahApps.Metro',
+              'dotnet/BenchmarkDotNet',
+              'killnine/s7netplus',
+              'IdentityModel/IdentityModel',
+              'MapsterMapper/Mapster',
+              'AutoFixture/AutoFixture',
+              'PrismLibrary/Prism',
+              'huorswords/Microsoft.Extensions.Logging.Log4Net.AspNetCore',
+              'coverlet-coverage/coverlet',
+              'ThreeMammals/Ocelot',
+              'xceedsoftware/wpftoolkit',
+              'cefsharp/cefsharp',
+              'RicoSuter/NSwag',
+              'stripe/stripe-dotnet',
+              'hardkoded/puppeteer-sharp',
+              'twilio/twilio-csharp',
+              'MaterialDesignInXAML/MaterialDesign',
+              'TobiasBuchholz/Plugin.Firebase',
+              'Fody/Fody',
+              'Firebase/firebase-admin-dotnet',
+              'zaafar/ClickableTransparentOverlay',
+              'discord-net/Discord.Net',
+              'mini-software/MiniExcel',
+              'googleapis/google-api-dotnet-client',
+              'chrishaly/bc-csharp',
+              'Xabaril/AspNetCore.Diagnostics.HealthChecks',
+              'aws/aws-sdk-net/',
+              'SixLabors/ImageSharp.Drawing',
+              'ststeiger/PdfSharpCore',
+              'protobuf-net/protobuf-net',
+              'aaubry/YamlDotNet/wiki',
+              'jwt-dotnet/jwt',
+              'Ruslan-B/FFmpeg.AutoGen',
+              'spectreconsole/spectre.console',
+              'mellinoe/imgui.net',
+              'dotnet/MQTTnet',
+              'appium/dotnet-client',
+              'adamhathcock/sharpcompress',
+              'mganss/HtmlSanitizer',
+              'googleapis/google-api-dotnet-client',
+              'google/google-api-dotnet-client',
+              'neuecc/MessagePack-CSharp',
+              'Exiled-Team/EXILED',
+              'helix-toolkit/helix-toolkit',
+              'khellang/Scrutor',
+              'sergey-shandar/getboost',
+              'Blazored/SessionStorage',
+              'serilog-contrib/serilog-sinks-elasticsearch',
+              'redth/ZXing.Net.Maui',
+              'mattfrear/Swashbuckle.AspNetCore.Filters',
+              'altmann/FluentResults',
+              'step-up-labs/firebase-database-dotnet'
+              ]
+
+              const createdIssues = {}; // Object to track created issues by repository
               
               const markdownContent = `
               We've noticed that your package on NuGet.org is missing a README file.
 
               ## Why READMEs are Important
-              A README is essential for users to understand your package's purpose and functionality quickly. It's the first thing users see on NuGet.org and helps them decide if your package meets their needs.
+              Our customer research indicates that one of the top problems that package consumers face is insufficient package documentation such as README files. Adding a README file to your package will help users quickly understand what the package is and what it does. Since your README will be the first impression for users when they view your package on NuGet.org, it is crucial for authors to write and include high-quality READMEs for their packages.
 
               ## Get Started with READMEs
 
@@ -122,13 +115,14 @@ jobs:
                   body: markdownContent
                 });
                 console.log(`Issue created in ${repo}: for package ${packageName} `, response.data.html_url);
+                createdIssues[repo] = true;
               }
-              
               for (const packageName in packages) {
                 if (Object.hasOwnProperty.call(packages, packageName)) {
                   const repo = packages[packageName];
+                  if (!createdIssues[repo] && !skipRepos.includes(repo))
                   try {
-                    await new Promise(resolve => setTimeout(resolve, 60000));
+                    //await new Promise(resolve => setTimeout(resolve, 60000));
                     await createIssue(repo, packageName);
                   } catch (error) {
                     console.error(`Error occurred while processing package ${packageName}: ${error.message}`);
